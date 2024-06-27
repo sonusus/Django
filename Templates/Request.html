@@ -1,0 +1,32 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+<table class="table">
+    <tr><th colspan="2"><h2> Request</h2></th></tr>
+<tr>
+    <th>Request</th><td><input type="text" name="t1" required id=""></td>
+</tr>
+<tr>
+    <th>Type</th><td>
+        <select name="t2" id="">
+            <option value="Student">Student</option>
+            <option value="Employee">Employee</option>
+            <option value="Oldaged(widows)">Oldaged(widows)</option>
+            <option value="MarriedCouples">MarriedCouples</option>
+            <option value="Others">Others</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <th>Gender</th><td><input type="radio" name="t3" id="" value="Male">Male<input type="radio" name="t3" id="" value="Female">Female</td>
+</tr>
+
+<tr>
+    <th colspan="2">
+        <input type="submit" value="Submit" name="sub">
+    </th>
+</tr>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+<table class="table" style="width:750px;">
+    <tr><th colspan="2"><h2> Request</h2></th></tr>
+    <tr><td rowspan="4">
+        <table>
+            <tr><th>Id</th><th>Name</th></tr>
+            {% for d in data %}
+            <tr>
+                <td>{{d.id}}</td><td><a href="/Chatuser?to={{d.email}}"> {{d.name}}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </td></tr>
+    <tr>
+        <td>
+            <table>
+                {% for c in chat %}
+                <tr>
+                    <td>{{c.message}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </td>
+    </tr>
+
+<tr>
+    <td>
+      <input type="text" name="t2" id=""><input type="file" name="t3" id=""><input type="submit" value=">>" name="sub">
+    </td>
+</tr>
+
+
+
+</table>
+</form>
+{% endblock %}

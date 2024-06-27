@@ -1,0 +1,25 @@
+{% extends 'CounsilerHome.html' %}
+{% block content %}
+
+<table class="table">
+    <tr style="background-color: aquamarine;">
+        <th>User</th>
+        <th>Request</th>
+        <th>Type</th>
+        <th>BookingDate</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.usr.name}}</td>
+        <td>{{d.request}}</td>
+        <td>{{d.typ}}</td>
+        <td>{{d.bookingdate}}</td>
+        <td>{{d.status}}</td>
+        <td><a href="/viewhistory?id={{d.usr.email}}">Viewhistory</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,225 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<!-- <form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Question</td><td>{{data.question}}</td>
+        </tr>
+        <tr><td>Answers</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer1}}" id="">{{data.answer1}}</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer2}}" id="">{{data.answer2}}</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer3}}" id="">{{data.answer3}}</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer4}}" id="">{{data.answer4}}</td></tr>
+        <tr><td><input type="submit" value="Next"></td></tr>
+    </table> -->
+<!-- </form> -->
+<div class="row no-gutters">
+    <div class="col-lg-6" style="float: left;padding-left:10px; width: 1000px;">
+        <form method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+            <h3>{{ question.question }}</h3>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer1 }}"
+                id="option_a_{{ question.pk }}">
+            <label for="option_a_{{ question.pk }}">{{ question.answer1 }}</label><br>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer2 }}"
+                id="option_b_{{ question.pk }}">
+            <label for="option_b_{{ question.pk }}">{{ question.answer2 }}</label><br>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer3 }}"
+                id="option_c_{{ question.pk }}">
+            <label for="option_c_{{ question.pk }}">{{ question.answer3 }}</label><br>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer4 }}"
+                id="option_d_{{ question.pk }}">
+            <label for="option_d_{{ question.pk }}">{{ question.answer4 }}</label><br><br>
+            {% endfor %}
+            <button type="submit" name="sub">Submit</button>
+            <button type="submit" name="skip">Skip</button>
+        </form>
+    </div>
+    <div class="col-lg-6" style="float: left;">
+        <div class="testimonials-section">
+            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide5" class="slider__nav"/>
+          <div class="slider__inner">
+            <div class="slider__contents">
+              <quote>&rdquo;</quote>
+              <p class="slider__txt">We love you guys. It's easy to answer, we get a better understanding of your mental health ,Kindly Follow the steps.</p>
+              <h2 class="slider__caption">Step-1 |Swipe </h2>
+            </div>
+            <div class="slider__contents">
+              <quote>&rdquo;</quote>
+              <p class="slider__txt">You all given such questions asked by qualified Counselors,First read question carefully.</p>
+              <h2 class="slider__caption">Step-2 | Swipe</h2>
+            </div>
+            <div class="slider__contents">
+              <quote>&rdquo;</quote>
+              <p class="slider__txt">Answer the questions according to your will.</p>
+              <h2 class="slider__caption">Step-3 | Swipe</h2>
+            </div>
+            <div class="slider__contents">
+              <quote>&rdquo;</quote>
+              <p class="slider__txt">You answer our questions, always takes care of problems, and we never have a hassle.</p>
+              <h2 class="slider__caption">Step-4 | Swipe</h2>
+            </div>
+            <div class="slider__contents">
+              <quote>&rdquo;</quote>
+              <p class="slider__txt">If you don't want to answer the question Skip it.</p>
+              <h2 class="slider__caption">Step-5 | Swipe</h2>
+            </div>
+          </div>
+        </div>
+        <style>*, *:before, *:after {
+            box-sizing: border-box;
+          }
+          html, body {
+            height: 100%;
+          }
+          .testimonials-section {
+            background: #fff;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -webkit-box-align: end;
+            -webkit-align-items: flex-end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+          }
+          .slider__nav {
+            width: 12px;
+            height: 12px;
+            margin: 80px 12px;
+            border-radius: 0%;
+            z-index: 10;
+            outline: 6px solid #ccc;
+            outline-offset: -6px;
+            box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+          }
+          .slider__nav:checked {
+            -webkit-animation: check 0.4s linear forwards;
+            animation: check 0.4s linear forwards;
+          }
+          .slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+            left: 0%;
+          }
+          .slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+            left: -100%;
+          }
+          .slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+            left: -200%;
+          }
+          .slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+            left: -300%;
+          }
+          .slider__nav:checked:nth-of-type(5) ~ .slider__inner {
+            left: -400%;
+          }
+          .slider__inner {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 500%;
+            height: auto;
+            -webkit-transition: left 0.4s;
+            transition: left 0.4s;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+          }
+          .slider__contents {
+            height: 100%;
+            text-align: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            -webkit-flex-flow: column nowrap;
+            -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+          }
+          .slider__caption {
+            font-size: 14px;
+            color: #111;
+            opacity: .5;
+            font-family: 'Roboto';
+            font-weight: bold;
+          }
+          .slider__txt {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: 'Roboto';
+            line-height: 1.7;
+            color: #111;
+            margin-top: -20px;
+            margin-bottom: 20px;
+            max-width: 750px;
+          }
+          quote {
+            font-family: 'Arial';
+            font-weight: bold;
+            font-size: 100px;
+            color: #ec2027;
+            margin-bottom: 0;
+          }
+          
+          @-webkit-keyframes check {
+            50% {
+              outline-color: #333;
+              box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+            }
+            100% {
+              outline-color: #333;
+              box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+            }
+          }
+          
+          @keyframes check {
+            50% {
+              outline-color: #333;
+              box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+            }
+            100% {
+              outline-color: #333;
+              box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+            }
+          }
+          </style>
+    </div>
+</div>
+{% endblock %}

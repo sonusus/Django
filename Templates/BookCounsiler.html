@@ -1,0 +1,32 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+<table class="table">
+    <tr><th colspan="2"><h2> Request</h2></th></tr>
+<tr>
+    <th>Request</th><td><input type="text" name="t1" required id=""></td>
+</tr>
+<tr>
+    <th>Type</th><td>
+        <select name="t2" id="">
+            <option value="Single Counselling">Single Counselling</option>
+            <option value="Multiple Counselling">Multiple Counselling</option>
+            <option value="Single session for cupple">Single session for cupple</option>
+            <option value="Multi session for cupple">Multi session for cupple</option>
+            
+        </select>
+    </td>
+</tr>
+<tr>
+    <th>Booking Date</th><td><input type="date" min="{{x}}" name="t3" id=""></td>
+</tr>
+
+<tr>
+    <th colspan="2">
+        <input type="submit" value="Submit" name="sub">
+    </th>
+</tr>
+</table>
+</form>
+{% endblock %}

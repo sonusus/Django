@@ -1,0 +1,21 @@
+{% extends 'CounsilerHome.html' %}
+{% block content %}
+
+<table class="table">
+    <tr style="color:aqua">
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Date</th>
+       
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.question}}</td>
+        <td>{{d.answer}}</td>
+        <td>{{d.date}}</td>
+       
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+<table class="table">
+    <tr><th colspan="2"><h2> Registration</h2></th></tr>
+<tr>
+    <th>Name</th><td><input type="text" name="t1" required id="" value="{{data.name}}"></td>
+</tr>
+<tr>
+    <th>Email</th><td><input type="email"  value="{{data.email}}" name="t2" required id=""></td>
+</tr>
+<tr>
+    <th>Mobile</th><td><input type="text"  value="{{data.phone}}" pattern="[6789][0-9]{9}"  name="t3" required id=""></td>
+</tr>
+<tr>
+    <th>Address</th><td><input type="text"  value="{{data.address}}"  name="t4" required id=""></td>
+</tr>
+
+<tr>
+    <th>Dob</th><td><input type="Date"  value="{{data.dob}}" name="t5" required id=""></td>
+</tr>
+
+
+
+
+<tr>
+    <th colspan="2">
+        <input type="submit" value="Submit" name="sub">
+    </th>
+</tr>
+</table>
+</form>
+{% endblock %}

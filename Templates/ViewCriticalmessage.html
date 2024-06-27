@@ -1,0 +1,15 @@
+{% extends 'AdminHome.html' %}
+{% block content %}
+
+<table class="table">
+    <tr>
+        <th>Username</th><th>Message</th><th>Date</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.usr.name}}</td><td>{{d.messages}}</td><td>{{d.date}}</td><td><a href="/takeaction?id={{d.id}}">Action</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<!-- <form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Question</td><td>{{data.question}}</td>
+        </tr>
+        <tr><td>Answers</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer1}}" id="">{{data.answer1}}</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer2}}" id="">{{data.answer2}}</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer3}}" id="">{{data.answer3}}</td></tr>
+        <tr><td><input type="radio" name="answer" value="{{data.answer4}}" id="">{{data.answer4}}</td></tr>
+        <tr><td><input type="submit" value="Next"></td></tr>
+    </table> -->
+<!-- </form> -->
+<div class="row no-gutters">
+    <div class="col-lg-6" style="float: left;padding-left:10px; width: 1000px;">
+        <form method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+            <h3>{{ question.question }}</h3>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer1 }}"
+                id="option_a_{{ question.pk }}">
+            <label for="option_a_{{ question.pk }}">{{ question.answer1 }}</label><br>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer2 }}"
+                id="option_b_{{ question.pk }}">
+            <label for="option_b_{{ question.pk }}">{{ question.answer2 }}</label><br>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer3 }}"
+                id="option_c_{{ question.pk }}">
+            <label for="option_c_{{ question.pk }}">{{ question.answer2 }}</label><br>
+            <input type="radio" name="question_{{ question.pk }}" value="{{ question.answer4 }}"
+                id="option_d_{{ question.pk }}">
+            <label for="option_d_{{ question.pk }}">{{ question.answer3 }}</label><br><br>
+            {% endfor %}
+            <button type="submit" name="sub">Submit</button>
+            <button type="submit" name="skip">Skip</button>
+        </form>
+    </div>
+    <div class="col-lg-6" style="float: left;">
+        hai
+    </div>
+</div>
+{% endblock %}

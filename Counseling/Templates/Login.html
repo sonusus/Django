@@ -1,0 +1,19 @@
+{% extends 'Commonpage.html' %}
+{% block content %}
+<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+    {% csrf_token %}
+<table class="table">
+<tr>
+    <th>UserName</th><td><input type="text" name="t1" id=""></td>
+</tr>
+<tr>
+    <th>Password</th><td><input type="password" name="t2" id=""></td>
+</tr>
+<tr>
+    <th colspan="2">
+        <input type="submit" value="Submit" name="sub">
+    </th>
+</tr>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+
+<table>
+    <tr>
+        <th>Username</th><th>Message</th>Date
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.usr.name}}</td><td>{{d.messages}}</td><td>{{d.date}}</td><td><a href="/takeaction?id={{d.id}}">Action</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

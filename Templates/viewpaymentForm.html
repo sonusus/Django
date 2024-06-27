@@ -1,0 +1,23 @@
+{% extends 'AdminHome.html' %}
+{% block content %}
+
+<table class="table">
+    <tr style="background-color: aquamarine;">
+        <th>User</th>
+        <th>Counselor</th>
+        <th>Amount</th>
+        <th>Date</th>
+        
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.usr.name}}</td>
+        <td>{{d.con.name}}</td>
+        <td>{{d.amount}}</td>
+        <td>{{d.date}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'CounsilerHome.html' %}
+{% block content %}
+<form method="POST" id="contactForm" enctype="multipart/form-data" name="contactForm" class="contactForm">
+    {% csrf_token %}
+<table class="table">
+    <tr><th colspan="2"><h2>Question</h2></th></tr>
+<tr>
+    <th>Question</th><td><input type="text" name="t1" required id=""></td>
+</tr>
+
+<tr>
+    <th>Answer1</th><td><input type="text" name="t2" required id=""></td>
+</tr>
+<tr>
+    <th>Answer2</th><td><input type="text"   name="t3" required id=""></td>
+</tr>
+<tr>
+    <th>Answer3</th><td><input type="text"  name="t4" required id=""></td>
+</tr>
+
+<tr>
+    <th>Answer4</th><td><input type="text" name="t5" required id=""></td>
+</tr>
+
+<tr>
+    <th>Correct Answer</th><td><input type="text"  name="t6" required id=""></td>
+</tr>
+
+
+<tr>
+    <th colspan="2">
+        <input type="submit" value="Submit" name="sub">
+    </th>
+</tr>
+</table>
+</form>
+{% endblock %}

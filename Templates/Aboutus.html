@@ -1,0 +1,276 @@
+{% extends 'Commonpage.html' %}
+{% block content %}
+<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+    {% csrf_token %}
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Timeline-2</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.min.css">
+        </head>
+        
+        <body>
+            <h1>Timeline Achievements</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main">
+                            <div class="timeline">
+                                <a href="#" class="content">
+                                    <div class="icon"><i class="fa fa-desktop"></i></div>
+                                    <div class="year">2021</div>
+                                    <h3 class="title"></h3>
+                                    <p class="description">
+                                        Our first annual 2021 Online Therapy Awards celebrate the top platforms for mental health support.
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="timeline">
+                                <a href="#" class="content">
+                                    <div class="icon"><i class="fa fa-crosshairs"></i></div>
+                                    <div class="year">2020</div>
+                                    <h3 class="title"></h3>
+                                    <p class="description">
+                                        online counselling sessions organised during COVID-19 lockdown through online platforms to provide academic support to the learners.
+                                    </p>
+                                </a>
+                            </div>
+        
+                            <div class="timeline">
+                                <a href="#" class="content">
+                                    <div class="icon"><i class="fa fa-rocket"></i></div>
+                                    <div class="year">2019</div>
+                                    <h3 class="title"></h3>
+                                    <p class="description">
+                                        Online Counseling in Tertiary Institutions. Attitudes of Students towards new Counseling Methods.
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="timeline">
+                                <a href="#" class="content">
+                                    <div class="icon"><i class="fa fa-clock-o"></i></div>
+                                    <div class="year">2018</div>
+                                    <h3 class="title"></h3>
+                                    <p class="description">
+                                        This study looked at preferences among students for face-to-face .
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        
+        </html>
+        <style>body {
+            margin-top: 30px;
+            text-align: center;
+            background: #ddbf9d !important;
+        }
+
+        h1 {
+            color: #353535;
+            font-weight: 700 !important;
+            font-size: 45px;
+            margin-bottom: 30px !important;
+        }
+        .main:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .main .timeline {
+            width: calc(50% + 110px);
+            margin: 0 0 30px;
+            float: right;
+        }
+
+        .main .content {
+            background: #fff;
+            padding: 25px 25px 25px 175px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            position: relative;
+        }
+
+        .main .content:hover {
+            text-decoration: none;
+        }
+
+        .main .content:before {
+            content: "";
+            background: #a07f5a;
+            width: 125px;
+            height: 100%;
+            border: 0 solid #917351;
+            border-right-width: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .main .icon {
+            color: #fff;
+            background: #917351;
+            font-size: 45px;
+            text-align: center;
+            line-height: 105px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 0px #fff inset, 0 0 8px rgba(0, 0, 0, 0.4);
+            transform: translateY(-50%);
+            position: absolute;
+            top: 50%;
+            left: 62px;
+        }
+
+        .main .year {
+            color: #fff;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 35px;
+            transform: translateY(-50%) rotate(90deg);
+            position: absolute;
+            top: 50%;
+            left: -10px;
+        }
+
+        .main .title {
+            color: #917351;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 8px;
+        }
+
+        .main .description {
+            color: #777;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .main .timeline:nth-child(even) {
+            float: left;
+        }
+
+        .main .timeline:nth-child(even) .content {
+            padding: 25px 175px 25px 25px;
+        }
+
+        .main .timeline:nth-child(even) .content:before {
+            border-left-width: 30px;
+            border-right-width: 0;
+            left: auto;
+            right: 0;
+        }
+
+        .main .timeline:nth-child(even) .year {
+            left: auto;
+            right: -10px;
+        }
+
+        .main .timeline:nth-child(even) .icon {
+            box-shadow: -1px 1px 0px #fff inset, 0 0 8px rgba(0, 0, 0, 0.4);
+            left: auto;
+            right: 62px;
+        }
+
+        .main .timeline:nth-child(4n+2) .content:before {
+            background: #14528c;
+            border-color: #103c66;
+        }
+
+        .main .timeline:nth-child(4n+2) .icon {
+            background: #103c66;
+        }
+
+        .main .timeline:nth-child(4n+2) .title {
+            color: #14528c;
+        }
+
+        .main .timeline:nth-child(4n+3) .content:before {
+            background: #d3b132;
+            border-color: #ad8f25;
+        }
+
+        .main .timeline:nth-child(4n+3) .icon {
+            background: #ad8f25;
+        }
+
+        .main .timeline:nth-child(4n+3) .title {
+            color: #d3b132;
+        }
+
+        .main .timeline:nth-child(4n+4) .content:before {
+            background: #ce8964;
+            border-color: #a56d4f;
+        }
+
+        .main .timeline:nth-child(4n+4) .title {
+            color: #a56d4f;
+        }
+
+        .main .timeline:nth-child(4n+4) .icon {
+            background: #ce8964;
+        }
+
+        @media screen and (max-width:767px) {
+            .main .timeline {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:576px) {
+
+            .main .timeline,
+            .main .timeline:nth-child(even) {
+                text-align: center;
+                margin: 0 0 30px;
+            }
+
+            .main .timeline-content,
+            .main .timeline:nth-child(even) .content {
+                padding: 15px 10px 175px 10px;
+            }
+
+            .main .content:before,
+            .main .timeline:nth-child(even) .content:before {
+                width: 100%;
+                height: 123px;
+                border-left-width: 0;
+                border-right-width: 0;
+                border-top-width: 30px;
+                top: auto;
+                bottom: 0;
+            }
+
+            .main .year,
+            .main .timeline:nth-child(even) .year {
+                transform: translateX(-50%) translateY(0) rotate(0deg);
+                top: auto;
+                bottom: 10px;
+                left: 50%;
+            }
+
+            .main .icon,
+            .main .timeline:nth-child(even) .icon {
+                box-shadow: -1px -1px 0px #fff inset, 0 0 8px rgba(0, 0, 0, 0.4);
+                transform: translateX(-50%) translateY(0);
+                top: auto;
+                bottom: 62px;
+                left: 50%;
+            }
+
+            .main .title {
+                font-size: 20px;
+            }
+        }</style>
+    </form>
+{% endblock %}

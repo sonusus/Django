@@ -1,0 +1,47 @@
+{% extends 'Userhome.html' %}
+{% block content %}
+<!-- <section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row"> -->
+            
+           <form action="" method="post" style="float: left;">
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td><input type="text" name="name" id=""><input type="submit" value="...">
+                    </td></tr>
+                    
+            </table>
+            <br><br>
+        </form>
+            {% for d in data %}
+            <a href="/moreaboutcounsiler?id={{d.id}}">
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(static/media/{{d.img}});"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>{{d.name}}</h3>
+                        <span class="position mb-2">{{d.desig}}</span>
+                        <div class="faded">
+                            <p>I am {{d.name}},Designation: {{d.desig}} Mycontact Details {{d.email}},{{d.phone}}</p>
+                            <ul class="ftco-social text-center">
+                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+          </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+            {% endfor %}
+        <!-- </div>
+    </div>
+</section> -->
+{% endblock %}
